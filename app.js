@@ -23,6 +23,13 @@ function renderGiph(newMeme) {
   $('.giphs').append(image);
 }
 
+function deleteMeme(){
+  $('.giphs').empty()
+
+}
+
+$('#delete-btn').on('click',deleteMeme)
+
 /**On submit this function will use getSearchVal to send the input val to
  * giphy api */
 function handleSubmit(evt) {
