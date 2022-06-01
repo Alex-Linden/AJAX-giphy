@@ -6,12 +6,25 @@ function getSearchVal() {
   console.log(searchTerm);
   //return searchTerm;
 }
+/** Ajax func */
+
+async function getMeme() {
+
+
+  let responce = await axios.get(
+    "http://api.giphy.com/v1/gifs/search",
+    {params: {"api_key":"MhAodEJIJxQMxW9XqxKjyXfNYdLoOIym","q":"funny"}})
+  console.log(responce.data)
+}
 
 /**On submit this function will use getSearchVal to send the input val to
  * giphy api */
 function handleSubmit(evt){
   evt.preventDefault();
-  getSearchVal()
+  //let word = getSearchVal()
+  getMeme()
+
+
 }
 
 $('.submit-form').on('submit', handleSubmit);
